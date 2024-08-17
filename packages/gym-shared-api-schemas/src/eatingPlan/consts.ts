@@ -1,0 +1,2 @@
+export const EATING_DAY_NAME_MIN_LENGTH = 4;
+export const EATING_DAY_NAME_MAX_LENGTH = 128;
