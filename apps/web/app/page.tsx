@@ -1,6 +1,8 @@
 import { log } from '@repo/logger';
 
-const a = 'fe';
+const a:number = 'fe';
+
+
 export const metadata = {
   title: 'Store | Kitchen Sink',
 };
