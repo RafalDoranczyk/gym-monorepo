@@ -1,4 +1,3 @@
 {
-  "**/*.{ts,tsx,md,json}": ["npm run lint"],
-  "*.json": ["npm run format"]
-}
+    "*.{js,jsx}": "npm run lint"
+  }
