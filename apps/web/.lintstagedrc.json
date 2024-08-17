@@ -1,2 +1,2 @@
 
-{ "{ts,tsx}": "eslint --fix" }
+{ "{ts,tsx}": "prettier --write" }
