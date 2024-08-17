@@ -19,6 +19,18 @@ module.exports = {
   parserOptions: {
     project,
   },
+  plugins: [
+    'perfectionist',
+  ],
+  rules: {
+    'perfectionist/sort-imports': [
+      'error',
+      {
+        type: 'alphabetical',
+        order: 'asc',
+      }
+    ]
+  },
   env: {
     node: true,
     es6: true,

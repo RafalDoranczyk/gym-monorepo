@@ -22,6 +22,18 @@ module.exports = {
     ].map(require.resolve),
     "turbo",
   ],
+  plugins: [
+    'perfectionist',
+  ],
+  rules: {
+    'perfectionist/sort-imports': [
+      'error',
+      {
+        type: 'alphabetical',
+        order: 'asc',
+      }
+    ]
+  },
   parserOptions: {
     project,
   },
