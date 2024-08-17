@@ -1,6 +1,5 @@
 import { log } from '@repo/logger';
 
-const a:number = 'fe';
 
 
 export const metadata = {
@@ -9,7 +8,7 @@ export const metadata = {
 
 
 export default function Store() {
- log(a)
+
   log('Hey! This is the Store page.');
 
   return <h1>page</h1>;
