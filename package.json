@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean & del package-lock.json",
+    "clean": "turbo run clean & del package-lock.json & rd /s /q .turbo & rd /s /q node_modules",
     "dev": "turbo run dev",
     "lint": "turbo run lint -- --fix",
     "test": "turbo run test",
