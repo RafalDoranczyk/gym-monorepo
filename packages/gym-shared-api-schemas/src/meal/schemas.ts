@@ -1,12 +1,12 @@
-import { Static, Type } from "@sinclair/typebox";
+import { Static, Type } from '@sinclair/typebox';
 
-import { IngredientSchema } from "../ingredient/schemas";
-import { NutritionGroupSchema } from "../nutritionGroup";
+import { IngredientSchema } from '../ingredient/schemas';
+import { NutritionGroupSchema } from '../nutritionGroup';
 import {
   MEAL_DESCRIPTION_MAX_LENGTH,
   MEAL_NAME_MAX_LENGTH,
   MEAL_NAME_MIN_LENGTH,
-} from "./consts";
+} from './consts';
 
 // Meal
 export const MealIngredientSchema = Type.Object({
@@ -17,7 +17,7 @@ export const MealIngredientSchema = Type.Object({
 export type MealIngredient = Static<typeof MealIngredientSchema>;
 
 export const MealSchema = Type.Object({
-  createdAt: Type.String({ format: "date" }),
+  createdAt: Type.String({ format: 'date' }),
   description: Type.Optional(
     Type.String({
       maxLength: MEAL_DESCRIPTION_MAX_LENGTH,
@@ -59,7 +59,7 @@ export type GetSingleMealResponse = Static<typeof GetSingleMealResponseSchema>;
 export const CreateMealPayloadSchema = Type.Object({
   description: MealSchema.properties.description,
   group: NutritionGroupSchema.properties.name,
-  ingredients: Type.Array(Type.Omit(MealIngredientSchema, ["ingredient"])),
+  ingredients: Type.Array(Type.Omit(MealIngredientSchema, ['ingredient'])),
   name: MealSchema.properties.name,
 });
 export type CreateMealPayload = Static<typeof CreateMealPayloadSchema>;

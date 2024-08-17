@@ -1,16 +1,16 @@
-import { Static, Type } from "@sinclair/typebox";
+import { Static, Type } from '@sinclair/typebox';
 
-import { MEASUREMENTS_TYPES, MeasurementsSchema } from "../measurements";
-import { NutritionGoalsSchema } from "../nutrition-goals";
-import { NutritionGroupSchema } from "../nutritionGroup";
-import { USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from "./consts";
-import { CURRENCIES, PALETTE_MODES, USER_ROLES } from "./enums";
+import { MEASUREMENTS_TYPES, MeasurementsSchema } from '../measurements';
+import { NutritionGoalsSchema } from '../nutrition-goals';
+import { NutritionGroupSchema } from '../nutritionGroup';
+import { USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from './consts';
+import { CURRENCIES, PALETTE_MODES, USER_ROLES } from './enums';
 
 // User
 export const UserSchema = Type.Object({
-  createdAt: Type.String({ format: "date" }),
-  email: Type.String({ format: "email" }),
-  id: Type.String({ format: "uuid" }),
+  createdAt: Type.String({ format: 'date' }),
+  email: Type.String({ format: 'email' }),
+  id: Type.String({ format: 'uuid' }),
   username: Type.String({
     maxLength: USERNAME_MAX_LENGTH,
     minLength: USERNAME_MIN_LENGTH,
@@ -39,14 +39,10 @@ export type GetUserResponse = Static<typeof GetUserResponseSchema>;
 
 // UPDATE
 export const UpdateUserSettingsPayloadSchema = Type.Partial(UserSettingsSchema);
-export type UpdateUserSettingsPayload = Static<
-  typeof UpdateUserSettingsPayloadSchema
->;
+export type UpdateUserSettingsPayload = Static<typeof UpdateUserSettingsPayloadSchema>;
 
 export const UpdateUserSettingsResponseSchema = Type.Object({
   message: Type.String(),
   settings: UserSettingsSchema,
 });
-export type UpdateUserSettingsResponse = Static<
-  typeof UpdateUserSettingsResponseSchema
->;
+export type UpdateUserSettingsResponse = Static<typeof UpdateUserSettingsResponseSchema>;

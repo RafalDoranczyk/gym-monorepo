@@ -1,17 +1,17 @@
-import { Static, Type } from "@sinclair/typebox";
+import { Static, Type } from '@sinclair/typebox';
 
-import { NutritionGroupSchema } from "../nutritionGroup";
+import { NutritionGroupSchema } from '../nutritionGroup';
 import {
   INGREDIENT_MAX_NUMBER,
   INGREDIENT_MIN_NUMBER,
   INGREDIENT_NAME_MAX_LENGTH,
   INGREDIENT_NAME_MIN_LENGTH,
-} from "./consts";
-import { INGREDIENT_COUNT_TYPES } from "./enums";
+} from './consts';
+import { INGREDIENT_COUNT_TYPES } from './enums';
 
 // Ingredient
 export const IngredientPriceSchema = Type.Object({
-  createdAt: Type.String({ format: "date" }),
+  createdAt: Type.String({ format: 'date' }),
   id: Type.Integer(),
   price: Type.Number({ minimum: INGREDIENT_MIN_NUMBER }),
 });
@@ -27,7 +27,7 @@ export const IngredientSchema = Type.Object({
     minimum: INGREDIENT_MIN_NUMBER,
   }),
   countType: Type.Enum(INGREDIENT_COUNT_TYPES),
-  createdAt: Type.String({ format: "date" }),
+  createdAt: Type.String({ format: 'date' }),
   fat: Type.Number({
     maximum: INGREDIENT_MAX_NUMBER,
     minimum: INGREDIENT_MIN_NUMBER,
@@ -56,9 +56,7 @@ export const GetIngredientsResponseSchema = Type.Object({
   ingredients: Type.Array(IngredientSchema),
   total: Type.Number(),
 });
-export type GetIngredientsResponse = Static<
-  typeof GetIngredientsResponseSchema
->;
+export type GetIngredientsResponse = Static<typeof GetIngredientsResponseSchema>;
 
 // CREATE
 export const CreateIngredientPayloadSchema = Type.Object({
@@ -71,17 +69,13 @@ export const CreateIngredientPayloadSchema = Type.Object({
   price: IngredientPriceSchema.properties.price,
   protein: IngredientSchema.properties.protein,
 });
-export type CreateIngredientPayload = Static<
-  typeof CreateIngredientPayloadSchema
->;
+export type CreateIngredientPayload = Static<typeof CreateIngredientPayloadSchema>;
 
 export const CreateIngredientResponseSchema = Type.Object({
   ingredient: IngredientSchema,
   message: Type.String(),
 });
-export type CreateIngredientResponse = Static<
-  typeof CreateIngredientResponseSchema
->;
+export type CreateIngredientResponse = Static<typeof CreateIngredientResponseSchema>;
 
 //UPDATE
 export const UpdateIngredientPayloadSchema = Type.Object({
@@ -94,34 +88,30 @@ export const UpdateIngredientPayloadSchema = Type.Object({
   name: IngredientSchema.properties.name,
   prices: Type.Array(
     Type.Object({
-      createdAt: Type.String({ format: "date" }),
+      createdAt: Type.String({
+        format: 'date',
+      }),
       id: Type.Optional(Type.Integer()),
-      price: Type.Number({ minimum: INGREDIENT_MIN_NUMBER }),
+      price: Type.Number({
+        minimum: INGREDIENT_MIN_NUMBER,
+      }),
     }),
   ),
   protein: IngredientSchema.properties.protein,
 });
-export type UpdateIngredientPayload = Static<
-  typeof UpdateIngredientPayloadSchema
->;
+export type UpdateIngredientPayload = Static<typeof UpdateIngredientPayloadSchema>;
 
 export const UpdateIngredientResponseSchema = CreateIngredientResponseSchema;
-export type UpdateIngredientResponse = Static<
-  typeof UpdateIngredientResponseSchema
->;
+export type UpdateIngredientResponse = Static<typeof UpdateIngredientResponseSchema>;
 
 // REMOVE
 export const RemoveIngredientPayloadSchema = Type.Object({
   id: IngredientSchema.properties.id,
 });
-export type RemoveIngredientPayload = Static<
-  typeof RemoveIngredientPayloadSchema
->;
+export type RemoveIngredientPayload = Static<typeof RemoveIngredientPayloadSchema>;
 
 export const RemoveIngredientResponseSchema = Type.Object({
   id: IngredientSchema.properties.id,
   message: Type.String(),
 });
-export type RemoveIngredientResponse = Static<
-  typeof RemoveIngredientResponseSchema
->;
+export type RemoveIngredientResponse = Static<typeof RemoveIngredientResponseSchema>;

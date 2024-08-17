@@ -1,4 +1,4 @@
-import { CURRENCIES, PALETTE_MODES } from "./enums";
+import { CURRENCIES, PALETTE_MODES } from './enums';
 
 export const DEFAULT_PALETTE_MODE = PALETTE_MODES.DARK;
 export const DEFAULT_CURRENCY = CURRENCIES.USD;

@@ -1,14 +1,11 @@
-import { log } from "@repo/logger";
-
-
-
+import { log } from '@repo/logger';
 
 export const metadata = {
-  title: "Store | Kitchen Sink",
+  title: 'Store | Kitchen Sink',
 };
 
 export default function Store() {
-  log("Hey! This is the Store page.");
+  log('Hey! This is the Store page.');
 
-return <h1>page</h1>
+  return <h1>page</h1>;
 }
