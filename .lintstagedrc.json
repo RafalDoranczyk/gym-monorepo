@@ -1,1 +1,1 @@
-{ "*{ts,tsx,md,json}": "prettier" }
+{ "*{ts,tsx,md,json}": "prettier --write" }
