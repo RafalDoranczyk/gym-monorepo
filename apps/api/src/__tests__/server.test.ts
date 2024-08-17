@@ -1,4 +1,5 @@
 import supertest from "supertest";
+
 import { createServer } from "../server";
 
 describe("Server", () => {

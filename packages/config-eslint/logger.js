@@ -4,7 +4,11 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended",  "turbo"],
+  extends: [
+    "eslint:recommended",
+    "turbo",
+    "plugin:perfectionist/recommended-natural-legacy",
+  ],
   globals: {
     React: true,
     JSX: true,
