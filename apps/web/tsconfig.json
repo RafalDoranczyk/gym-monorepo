@@ -1,7 +1,10 @@
 {
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "extends": "@repo/config-typescript/nextjs.json",
   "compilerOptions": {
+    "jsx": "preserve",
     "outDir": "dist",
     "plugins": [
       {
@@ -9,5 +12,10 @@
       }
     ]
   },
-  "include": ["next.config.js", "next-env.d.ts", ".next/types/**/*.ts", "app"]
+  "include": [
+    "next.config.js",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "app"
+  ]
 }

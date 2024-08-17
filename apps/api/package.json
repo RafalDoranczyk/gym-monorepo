@@ -6,7 +6,7 @@
     "start": "node dist/index.js",
     "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
     "build": "tsup",
-    "clean": "rm -rf dist",
+    "clean": "rd /s /q dist & rd /s /q .turbo & rd /s /q node_modules",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
     "test": "jest --detectOpenHandles"

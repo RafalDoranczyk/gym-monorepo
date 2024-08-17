@@ -29,7 +29,6 @@ module.exports = {
     React: true,
     JSX: true,
   },
-  plugins: ["only-warn"],
   settings: {
     "import/resolver": {
       typescript: {
