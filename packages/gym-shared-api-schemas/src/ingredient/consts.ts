@@ -1,0 +1,4 @@
+export const INGREDIENT_MAX_NUMBER = 9999;
+export const INGREDIENT_MIN_NUMBER = 0;
+export const INGREDIENT_NAME_MIN_LENGTH = 3;
+export const INGREDIENT_NAME_MAX_LENGTH = 24;

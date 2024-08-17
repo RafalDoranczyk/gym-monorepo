@@ -1,0 +1,56 @@
+{
+  "name": "@repo/gym-shared-api-schemas",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "lint": "eslint --fix --ext .js,.jsx",
+    "clean": "rd /s /q .turbo & rd /s /q node_modules rd /s /q dist"
+  },
+  "exports": {
+    "./auth": {
+      "types": "./src/auth/index.ts",
+      "default": "./dist/auth/index.js"
+    },
+    "./eating-plan": {
+      "types": "./src/eating-plan/index.ts",
+      "default": "./dist/eating-plan/index.js"
+    },
+    "./ingredient": {
+      "types": "./src/ingredient/index.ts",
+      "default": "./dist/ingredient/index.js"
+    },
+    "./meal": {
+      "types": "./src/meal/index.ts",
+      "default": "./dist/meal/index.js"
+    },
+    "./measurements": {
+      "types": "./src/measurements/index.ts",
+      "default": "./dist/measurements/index.js"
+    },
+    "./nutrition-goals": {
+      "types": "./src/nutrition-goals/index.ts",
+      "default": "./dist/nutrition-goals/index.js"
+    },
+    "./nutrition-group": {
+      "types": "./src/nutrition-group/index.ts",
+      "default": "./dist/nutrition-group/index.js"
+    },
+    "./user": {
+      "types": "./src/user/index.ts",
+      "default": "./dist/user/index.js"
+    }
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.33.7"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/config-typescript": "*",
+    "@typescript-eslint/eslint-plugin": "7.1.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "eslint": "8.57.0",
+    "typescript": "5.3.3"
+  }
+}
