@@ -2,15 +2,15 @@ import { Static, Type } from "@sinclair/typebox";
 
 // Measurements
 export const MeasurementsSchema = Type.Object({
-  id: Type.Integer(),
-  createdAt: Type.String({ format: "date" }),
-  weight: Type.Number(),
-  chest: Type.Number(),
-  waist: Type.Number(),
   biceps: Type.Number(),
   calf: Type.Number(),
+  chest: Type.Number(),
+  createdAt: Type.String({ format: "date" }),
   hip: Type.Number(),
+  id: Type.Integer(),
   thigh: Type.Number(),
+  waist: Type.Number(),
+  weight: Type.Number(),
 });
 export type Measurements = Static<typeof MeasurementsSchema>;
 

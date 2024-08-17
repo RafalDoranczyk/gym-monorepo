@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 
 export enum MEASUREMENTS_TYPES {
-  WEIGHT = "weight",
+  BICEPS = "biceps",
+  CALF = "calf",
   CHEST = "chest",
   HIP = "hip",
   THIGH = "thigh",
-  BICEPS = "biceps",
-  CALF = "calf",
   WAIST = "waist",
+  WEIGHT = "weight",
 }

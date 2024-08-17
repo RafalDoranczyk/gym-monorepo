@@ -1,38 +1,39 @@
 import { Static, Type } from "@sinclair/typebox";
+
+import { MEASUREMENTS_TYPES, MeasurementsSchema } from "../measurements";
+import { NutritionGoalsSchema } from "../nutrition-goals";
+import { NutritionGroupSchema } from "../nutritionGroup";
 import { USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from "./consts";
 import { CURRENCIES, PALETTE_MODES, USER_ROLES } from "./enums";
-import { MEASUREMENTS_TYPES, MeasurementsSchema } from "../measurements";
-import { NutritionGroupSchema } from "../nutritionGroup";
-import { NutritionGoalsSchema } from "../nutrition-goals";
 
 // User
 export const UserSchema = Type.Object({
-  id: Type.String({ format: "uuid" }),
   createdAt: Type.String({ format: "date" }),
   email: Type.String({ format: "email" }),
+  id: Type.String({ format: "uuid" }),
   username: Type.String({
-    minLength: USERNAME_MIN_LENGTH,
     maxLength: USERNAME_MAX_LENGTH,
+    minLength: USERNAME_MIN_LENGTH,
   }),
 });
 
 export const UserSettingsSchema = Type.Object({
-  palette: Type.Enum(PALETTE_MODES),
-  currency: Type.Enum(CURRENCIES),
   activeMeasurementsKeys: Type.Array(Type.Enum(MEASUREMENTS_TYPES)),
+  currency: Type.Enum(CURRENCIES),
+  palette: Type.Enum(PALETTE_MODES),
 });
 
 // GET
 export const GetUserResponseSchema = Type.Object({
-  username: UserSchema.properties.username,
+  eatingDayPlanGroups: Type.Array(NutritionGroupSchema),
   email: UserSchema.properties.email,
-  role: Type.Enum(USER_ROLES),
-  settings: UserSettingsSchema,
   ingredientGroups: Type.Array(NutritionGroupSchema),
   mealGroups: Type.Array(NutritionGroupSchema),
-  eatingDayPlanGroups: Type.Array(NutritionGroupSchema),
-  nutritionGoals: NutritionGoalsSchema,
   measurements: MeasurementsSchema,
+  nutritionGoals: NutritionGoalsSchema,
+  role: Type.Enum(USER_ROLES),
+  settings: UserSettingsSchema,
+  username: UserSchema.properties.username,
 });
 export type GetUserResponse = Static<typeof GetUserResponseSchema>;
 
@@ -43,8 +44,8 @@ export type UpdateUserSettingsPayload = Static<
 >;
 
 export const UpdateUserSettingsResponseSchema = Type.Object({
-  settings: UserSettingsSchema,
   message: Type.String(),
+  settings: UserSettingsSchema,
 });
 export type UpdateUserSettingsResponse = Static<
   typeof UpdateUserSettingsResponseSchema

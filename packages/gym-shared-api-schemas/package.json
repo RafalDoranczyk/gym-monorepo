@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "lint": "eslint --fix --ext .js,.jsx",
+    "lint": "eslint src/**/*.ts",
     "clean": "rd /s /q .turbo & rd /s /q node_modules rd /s /q dist"
   },
   "exports": {
@@ -48,9 +48,7 @@
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/config-typescript": "*",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "eslint": "8.57.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "tsup": "8.0.2"
   }
 }
