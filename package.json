@@ -4,19 +4,17 @@
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^2.0.14"
+    "turbo": "2.0.14"
   },
   "engines": {
     "node": ">=18"
   },
-  "name": "kitchen-sink",
+  "name": "gym-monorepo",
   "packageManager": "npm@10.8.2",
   "workspaces": [
     "apps/*",
