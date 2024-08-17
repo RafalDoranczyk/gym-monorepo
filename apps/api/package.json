@@ -8,7 +8,7 @@
     "build": "tsup",
     "clean": "rd /s /q dist & rd /s /q .turbo & rd /s /q node_modules",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src/",
+    "lint": "eslint src/**/*.ts",
     "test": "jest --detectOpenHandles"
   },
   "jest": {

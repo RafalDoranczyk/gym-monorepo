@@ -13,23 +13,10 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 module.exports = {
   extends: [
-    "@vercel/style-guide/eslint/node",
-    "@vercel/style-guide/eslint/typescript",
-  ].map(require.resolve),
+    "plugin:perfectionist/recommended-natural-legacy",
+  ],
   parserOptions: {
     project,
-  },
-  plugins: [
-    'perfectionist',
-  ],
-  rules: {
-    'perfectionist/sort-imports': [
-      'error',
-      {
-        type: 'alphabetical',
-        order: 'asc',
-      }
-    ]
   },
   env: {
     node: true,

@@ -4,19 +4,11 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended",  "turbo"],
-  plugins: [
-    'perfectionist',
+  extends: [
+    "eslint:recommended",
+    "turbo",
+    "plugin:perfectionist/recommended-natural-legacy",
   ],
-  rules: {
-    'perfectionist/sort-imports': [
-      'error',
-      {
-        type: 'alphabetical',
-        order: 'asc',
-      }
-    ]
-  },
   globals: {
     React: true,
     JSX: true,
