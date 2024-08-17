@@ -1,1 +1,1 @@
-lint-staged --debug
+npx lint-staged --debug
