@@ -1,7 +1,10 @@
+import {GoogleSigninPayload} from '@repo/gym-shared-api-schemas/auth'
 import { log } from "@repo/logger";
 
 
-
+const a: GoogleSigninPayload = {
+  idToken: '35'
+}
 
 export const metadata = {
   title: "Store | Kitchen Sink",
