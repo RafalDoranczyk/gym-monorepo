@@ -1,1 +1,1 @@
-# gym-shared-api-schemas
+# gym-shared-schemas

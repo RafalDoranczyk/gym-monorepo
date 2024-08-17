@@ -1,5 +1,5 @@
 {
-  "name": "@repo/gym-shared-api-schemas",
+  "name": "@repo/gym-shared-schemas",
   "version": "0.0.0",
   "private": true,
   "scripts": {

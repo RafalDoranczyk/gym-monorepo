@@ -1,10 +1,24 @@
-import { log } from '@repo/logger';
+import 'reflect-metadata';
+import 'dotenv/config';
+import { FastifyInstance } from 'fastify';
 
-import { createServer } from './server';
+import container, { ConfigModuleInterface, ConfigSymbols } from './container';
 
-const port = process.env.PORT || 5001;
-const server = createServer();
+/**
+ * Run the server!
+ */
+async function start() {
+  const { host, port } = container.get<ConfigModuleInterface>(ConfigSymbols.Config);
+  const server = await container.getAsync<FastifyInstance>(ConfigSymbols.Server);
 
-server.listen(port, () => {
-  log(`api running on ${port}`);
-});
+  try {
+    server.swagger();
+    server.listen({ host, port });
+    server.log.info(`Server listening on ${host}:${port}`);
+  } catch (err) {
+    server.log.error(err);
+    process.exit(1);
+  }
+}
+
+start();
