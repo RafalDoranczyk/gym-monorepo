@@ -1,1 +1,1 @@
-{ "*{.ts,.tsx,.md,.json}": "prettier --write" }
+{ "*": "npm run format" }
