@@ -22,11 +22,7 @@ export default function swaggerPlugin(app: FastifyInstance) {
           type: 'apiKey',
         },
       },
-      tags: [
-        { description: 'Health related end-points', name: 'health' },
-        { description: 'Auth related end-points', name: 'auth' },
-        { description: 'User related end-points', name: 'user' },
-      ],
+      tags: [{ description: 'Health related end-points', name: 'health' }],
     },
   });
 

@@ -1,7 +1,8 @@
-import ApplicationAPI from '@/api';
-import { ConfigSymbols } from '@/container/symbols';
 import fastify from 'fastify';
 import { ContainerModule, interfaces } from 'inversify';
+
+import ApplicationAPI from '~/api';
+import { ConfigSymbols } from '~/container/symbols';
 
 import * as Plugins from './plugins';
 
@@ -20,12 +21,12 @@ export default new ContainerModule(bind => {
     logger: true,
   });
 
-  server.ready();
-
   // PLUGINS
   Plugins.FastifyHelmetPlugin(server);
   Plugins.FastifyCORSPlugin(server);
   Plugins.FastifySwaggerPlugin(server);
+
+  server.ready();
 
   ApplicationAPI(server);
 
