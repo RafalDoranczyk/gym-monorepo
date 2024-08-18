@@ -19,12 +19,14 @@
     "preset": "@repo/jest-presets/node"
   },
   "devDependencies": {
+    "@repo/config-typescript": "*",
     "@repo/eslint-config": "*",
     "@repo/jest-presets": "*",
-    "@repo/config-typescript": "*",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.24",
     "jest": "29.7.0",
+    "pino": "9.3.2",
+    "pino-pretty": "11.2.2",
     "tsup": "8.0.2",
     "typescript": "5.3.3"
   }

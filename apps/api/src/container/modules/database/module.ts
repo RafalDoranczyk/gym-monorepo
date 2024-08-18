@@ -1,5 +1,5 @@
+import { log } from '@repo/logger';
 import { ContainerModule } from 'inversify';
-import pino from 'pino';
 import { DataSource } from 'typeorm';
 
 export type DatabaseModuleInterface = DataSource;
@@ -20,10 +20,10 @@ export const dataSource = new DataSource({
 export default new ContainerModule(async () => {
   try {
     await dataSource.initialize();
-    pino().info(`${process.env.DB_TYPE} DB CONNECTED`);
+    log().info(`${process.env.DB_TYPE} DB CONNECTED`);
   } catch (error) {
-    pino().error('DB ERROR');
-    pino().error(error);
+    log().error('DB ERROR');
+    log().error(error);
 
     throw error;
   }
