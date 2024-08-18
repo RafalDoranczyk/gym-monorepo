@@ -1,0 +1,23 @@
+{
+  "name": "@repo/gym-shared-endpoints",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rd /s /q .turbo & rd /s /q node_modules rd /s /q dist"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/endpoints.ts",
+      "default": "./dist/endpoints.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/config-typescript": "*",
+    "typescript": "5.3.3",
+    "tsup": "8.0.2"
+  }
+}

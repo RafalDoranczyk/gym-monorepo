@@ -23,12 +23,15 @@
     "fastify": "4.28.1",
     "pg": "8.12.0",
     "typeorm": "0.3.20",
-    "reflect-metadata": "0.2.2"
+    "reflect-metadata": "0.2.2",
+    "@repo/gym-shared-endpoints": "*"
   },
   "devDependencies": {
     "@repo/config-typescript": "*",
     "@repo/eslint-config": "*",
     "@repo/gym-shared-schemas": "*",
+    "@repo/gym-shared-endpoints": "*",
+    "@repo/logger": "*",
     "@repo/jest-presets": "*",
     "@types/cors": "2.8.17",
     "@types/jest": "29.5.12",
