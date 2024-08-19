@@ -1,13 +1,13 @@
 {
   "extends": "@repo/config-typescript/base.json",
   "compilerOptions": {
-    "lib": ["ES6"],
+    "lib": ["ES2015"],
     "outDir": "./dist",
-    "types": ["reflect-metadata"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
+    "types": ["reflect-metadata"]
   },
   "exclude": ["node_modules"],
   "include": ["."]

@@ -15,23 +15,20 @@
     "preset": "@repo/jest-presets/node"
   },
   "dependencies": {
+    "@repo/logger": "*",
+    "fastify": "4.28.1",
     "@fastify/cors": "9.0.1",
     "@fastify/helmet": "11.1.1",
     "@fastify/swagger": "8.15.0",
     "@fastify/swagger-ui": "4.1.0",
-    "@repo/logger": "*",
-    "fastify": "4.28.1",
     "pg": "8.12.0",
     "typeorm": "0.3.20",
-    "reflect-metadata": "0.2.2",
-    "@repo/gym-shared-endpoints": "*"
+    "reflect-metadata": "0.2.2"
   },
   "devDependencies": {
     "@repo/config-typescript": "*",
     "@repo/eslint-config": "*",
     "@repo/gym-shared-schemas": "*",
-    "@repo/gym-shared-endpoints": "*",
-    "@repo/logger": "*",
     "@repo/jest-presets": "*",
     "@types/cors": "2.8.17",
     "@types/jest": "29.5.12",

@@ -1,9 +1,8 @@
-import { ENDPOINTS } from '@repo/gym-shared-endpoints';
 import { FastifyInstance } from 'fastify';
 
 export default function routes(fastify: FastifyInstance, _: any, done: () => void) {
   fastify.get(
-    ENDPOINTS.PING,
+    '/ping',
     {
       schema: {
         description: 'App health status',

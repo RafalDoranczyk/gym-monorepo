@@ -12,8 +12,7 @@
     "dev": "tsup --watch",
     "lint": "eslint src/",
     "typecheck": "tsc --noEmit",
-    "test": "jest",
-    "clean": "rd /s /q dist & rd /s /q .turbo & rd /s /q node_modules"
+    "test": "jest"
   },
   "jest": {
     "preset": "@repo/jest-presets/node"
